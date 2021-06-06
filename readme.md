@@ -1,3 +1,26 @@
+# Fork to support Nim's compiler within Omni
+
+======================
+
+## NOTES:
+
+All additional code is prepended with the `#OMNI` comment.
+
+## Additions:
+
+1) On failed compilation, do not `quit`, but use `setjmp` and `longjmp` to implement a low-level
+`try` / `catch` mechanism.
+
+2) Disable `stdin` handling and assign all `conf` options via code.
+
+3) Simplified `handleCmdLine` function.
+
+======================
+
+#Nim's readme.md:
+
+======================
+
 # <img src="https://raw.githubusercontent.com/nim-lang/assets/master/Art/logo-crown.png" height="28px"/> Nim
 
 [![Build Status](https://dev.azure.com/nim-lang/Nim/_apis/build/status/nim-lang.Nim?branchName=devel)](https://dev.azure.com/nim-lang/Nim/_build/latest?definitionId=1&branchName=devel)
