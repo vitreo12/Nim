@@ -1,5 +1,7 @@
 # Fork to support Nim's compiler within Omni
 
+## Version: v1.4.8
+
 ## NOTES:
 
 All additional code is prepended with the `#OMNI` comment.
