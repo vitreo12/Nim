@@ -1,7 +1,5 @@
 # Fork to support Nim's compiler within Omni
 
-======================
-
 ## NOTES:
 
 All additional code is prepended with the `#OMNI` comment.
@@ -15,7 +13,6 @@ All additional code is prepended with the `#OMNI` comment.
 
 3) Simplified `handleCmdLine` function.
 
-======================
 
 <br>
 <br>
