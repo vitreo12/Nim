@@ -11,6 +11,9 @@ import
   os, strutils, strtabs, sets, lineinfos, platform,
   prefixmatches, pathutils, nimpaths, tables
 
+#OMNI
+import omni/omni_setjmp
+
 from terminal import isatty
 from times import utc, fromUnix, local, getTime, format, DateTime
 
@@ -329,6 +332,9 @@ type
                                 severity: Severity) {.closure, gcsafe.}
     cppCustomNamespace*: string
     vmProfileData*: ProfileData
+
+    #OMNI
+    omniJmpBuf* : Omni_JmpBuf
 
 proc assignIfDefault*[T](result: var T, val: T, def = default(T)) =
   ## if `result` was already assigned to a value (that wasn't `def`), this is a noop.

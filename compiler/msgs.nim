@@ -13,6 +13,9 @@ import
 import std/private/miscdollars
 import strutils2
 
+#OMNI
+import omni/omni_setjmp
+
 type InstantiationInfo* = typeof(instantiationInfo())
 template instLoc(): InstantiationInfo = instantiationInfo(-2, fullPaths = true)
 
@@ -398,6 +401,10 @@ proc quit(conf: ConfigRef; msg: TMsgKind) {.gcsafe.} =
 No stack traceback available
 To create a stacktrace, rerun compilation with './koch temp $1 <file>', see $2 for details""" %
           [conf.command, "intern.html#debugging-the-compiler".createDocLink])
+  
+  #OMNI
+  omni_longjmp(conf.omniJmpBuf, 1)
+  
   quit 1
 
 proc handleError(conf: ConfigRef; msg: TMsgKind, eh: TErrorHandling, s: string) =
